@@ -8,7 +8,7 @@ int string_length(const char *string)
   return i;
 }
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
   int i;
   int j;

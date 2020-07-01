@@ -21,7 +21,7 @@ void memory_allocation()
   free(k);
 }
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
   memory_allocation();
   return 0;
