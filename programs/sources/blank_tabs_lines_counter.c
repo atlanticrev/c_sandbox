@@ -10,6 +10,7 @@ int main(void)
 	blanks_counter = 0;
 	tabs_counter = 0;
 	new_lines_counter = 0;
+	character = 0;
 
 	while ((character = getchar()) != EOF) {
 		if (character == '\n') {
