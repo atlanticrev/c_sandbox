@@ -8,7 +8,7 @@ struct item
   struct item *next;
 };
 
-struct item * int_array_to_list(int *arr, int len)
+struct item *int_array_to_list(int *arr, int len)
 {
   struct item *first = NULL;
   struct item *last = NULL;
