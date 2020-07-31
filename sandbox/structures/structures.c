@@ -1,6 +1,9 @@
 #include <stdio.h>
 
-enum { max_name_len = 64, max_group_len = 8 };
+enum { 
+  max_name_len = 64, 
+  max_group_len = 8 
+};
 
 struct student
 {
@@ -13,26 +16,9 @@ struct student
   float average;
 };
 
-struct student st1 = {
-  "Vasya",
-  'm',
-  1995,
-  51311,
-  3,
-  "312",
-  4.792
-};
-
-// st1.name = "Vasya";
-// st1.sex = 'm';
-// st1.year_of_birth = 1995;
-// st1.major_code = 51311;
-// st1.year = 3;
-// st1.group = "312";
-// st1.average= 4.792;
-
 int main(int argc, char const **argv)
 {
+  struct student st1 = { "Vasya", 'm', 1995, 51311, 3, "312", 4.792 };
   struct student *ptr;
   ptr = &st1;
   printf("%s\n", ptr->name); /* (*ptr).name */
