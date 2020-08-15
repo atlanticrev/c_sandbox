@@ -36,7 +36,6 @@ void string50(FILE *f1, FILE *f2)
       fprintf(f2, "[%s]\n", buffer);
     }    
   }
-  
 }
 
 int main(int argc, char const **argv)
