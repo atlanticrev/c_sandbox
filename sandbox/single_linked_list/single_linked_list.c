@@ -54,7 +54,7 @@ struct item *int_array_to_list(int *arr, int len)
 {
   struct item *tmp;
   if (!len)
-	return NULL;
+	  return NULL;
   tmp = malloc(sizeof(struct item));
   tmp->data = *arr;
   tmp->next = int_array_to_list(arr + 1, len - 1);
@@ -167,12 +167,49 @@ void list_filter(struct item **curr)
   }
 }
 
+// List reverse
+struct item *list_reverse(struct item *first) {
+  struct item *succ = first;
+  struct item *prev = NULL;
+
+  while (succ) 
+  {
+    succ = first->next;
+    first->next = prev;
+    prev = first;
+    if (succ)
+    {
+      first = succ;
+    } 
+  }
+
+  return first; 
+}
+
 int main(int argc, char const **argv)
 {
+  // Create values
+  // enum { arr_len = 10 };
+  // int arr[arr_len] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+  // enum { arr_len = 1 };
+  // int arr[arr_len] = { 22 };
+
   enum { arr_len = 10 };
-  int arr[arr_len] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+  int arr[arr_len] = { 11, 21, 31, 41, 51, 61, 71, 81, 91, 101 };
+
+  // Fill the list
   struct item *list = int_array_to_list(arr, arr_len);
-  list_filter(&list);
+
+  // list_filter(&list);
+  list_walker(&list);
+
+  printf("\n");
+  list = list_reverse(list);
+  list_walker(&list);
+
+  printf("\n");
+  list = list_reverse(list);
   list_walker(&list);
   // printf("%d\n", int_list_sum(list));
   return 0;
